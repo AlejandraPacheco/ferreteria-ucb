@@ -1,0 +1,23 @@
+<div class="toolbar" role="banner">
+    <img src="https://i.ibb.co/bsf31nM/bolsa-de-la-compra.png" alt="bolsa-de-la-compra" style="height: 45px; width: 45px;">
+    <span>SKITTER</span>
+        <div class="spacer"></div>
+        <button mat-raised-button routerLink="/">Home</button>
+        <button mat-raised-button routerLink="/inventario">Inventario</button>
+        <button mat-raised-button routerLink="/pedidos">Pedidos</button>
+        <button mat-raised-button routerLink="/contactos">Contactos</button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="User menu">
+        <mat-icon class="material-icons-outlined" style="color: black;">account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/userprofile">
+            <mat-icon>account_circle</mat-icon>
+            <span>Mi perfil</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span >Cerrar sesión</span>
+        </button>
+        </mat-menu>
+    
+</div>
