@@ -14,6 +14,13 @@ import { ContactosComponent } from './pages/contactos/contactos.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +28,8 @@ import { MatCardModule } from '@angular/material/card';
     NavbarComponent,
     InventarioComponent,
     ContactosComponent,
-    PedidosComponent
+    PedidosComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,13 @@ import { MatCardModule } from '@angular/material/card';
     RouterModule,
     MatButtonModule,
     NgbModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSelectModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

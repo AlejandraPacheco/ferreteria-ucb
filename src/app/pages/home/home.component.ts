@@ -15,8 +15,8 @@ export class HomeComponent {
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   cards = [
-    { title: 'Card 1', subtitle: '¡Novedad!', id: 1, content: 'Polera rosada con mangas de encaje', imageUrl: 'https://i.ibb.co/tBmqBY8/ej-blusa.jpg', precio: 50, talla: 'M'},
-    { title: 'Card 2', subtitle: '¡Novedad!', id: 2, content: 'Polera rosada con mangas de encaje', imageUrl: 'https://i.ibb.co/tBmqBY8/ej-blusa.jpg', precio: 50, talla: 'M' },
-    { title: 'Card 3', subtitle: '¡Novedad!', id: 3, content: 'Polera rosada con mangas de encaje', imageUrl: 'https://i.ibb.co/tBmqBY8/ej-blusa.jpg', precio: 50, talla: 'M' }
+    { title: 'Card 1', subtitle: '¡Mas vendido!', id: 1, content: 'Martillo', imageUrl: 'https://i.ibb.co/tC8SxgB/martillo.jpg', precio: 60},
+    { title: 'Card 2', subtitle: '¡Mas vendido!', id: 2, content: 'Destornillador tipo plano', imageUrl: 'https://i.ibb.co/yhgBF1T/destornillador.png', precio: 50 },
+    { title: 'Card 3', subtitle: '¡Mas vendido!', id: 3, content: 'Sierra para madera', imageUrl: 'https://i.ibb.co/FD2d7NR/sierra.jpg', precio: 70}
   ];
 }
