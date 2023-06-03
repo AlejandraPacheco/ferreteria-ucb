@@ -33,11 +33,27 @@ export class NuevoProductoComponent {
         console.log(response); // Muestra la respuesta del backend en la consola
         // Aquí puedes mostrar un mensaje en el frontend para indicar que el producto se guardó correctamente
         alert('Producto guardado correctamente');
+        // Se limpia el formulario
+        this.datos = {
+          nombre: '',
+          imagen: '',
+          descripcion: '',
+          precio: 0,
+          stock: 0
+        };
       },
       error => {
         console.error(error); // Muestra el error en la consola
         // Aquí puedes mostrar un mensaje de error en el frontend
         alert('Ocurrió un error al guardar el producto');
+        // Se limpia el formulario
+        this.datos = {
+          nombre: '',
+          imagen: '',
+          descripcion: '',
+          precio: 0,
+          stock: 0
+        };
       }
     );
   }

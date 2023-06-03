@@ -33,20 +33,24 @@ export class InventarioComponent {
   constructor(
     private router: Router,
     private dialog: MatDialog,
-    private http: HttpClient // Agrega esta línea
+    private http: HttpClient 
   ) {}
 
   ngOnInit() {
     this.http.get('http://localhost:3000/api/datos').subscribe((data: any) => {
-      this.dataSource.data = data; // Asigna los datos al dataSource de tu tabla
+      this.dataSource.data = data; // Asigna los datos al dataSource de la tabla
       console.log(data);
     });
   }
 
-  updateData(element: any) {
+  navigateToUpdatePage(productId: number) {
+    this.router.navigate(['/actualizar-producto', productId]);
+  }  
+
+/*   updateData(element: any) {
     // Navegar a otra pantalla con los datos de element
     this.router.navigate(['/updateproduct', { data: JSON.stringify(element) }]);
-  }
+  } */
 
   openConfirmationDialog(id: string, nombre: string): void {
     const dialogRef: MatDialogRef<any> = this.dialog.open(ConfirmationDialogComponent, {
@@ -56,7 +60,7 @@ export class InventarioComponent {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Aquí puedes realizar la acción de borrado del producto
+        // ... do something here
       }
     });
   }

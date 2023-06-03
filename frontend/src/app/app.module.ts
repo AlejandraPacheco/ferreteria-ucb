@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { NuevoProductoComponent } from './pages/nuevo-producto/nuevo-producto.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ActualizarProductoComponent } from './pages/actualizar-producto/actualizar-producto.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactosComponent,
     PedidosComponent,
     ConfirmationDialogComponent,
-    NuevoProductoComponent
+    NuevoProductoComponent,
+    ActualizarProductoComponent
   ],
   imports: [
     BrowserModule,

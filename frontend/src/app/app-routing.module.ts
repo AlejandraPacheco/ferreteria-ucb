@@ -5,6 +5,7 @@ import { InventarioComponent } from './pages/inventario/inventario.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
 import { ContactosComponent } from './pages/contactos/contactos.component';
 import { NuevoProductoComponent } from './pages/nuevo-producto/nuevo-producto.component';
+import { ActualizarProductoComponent } from './pages/actualizar-producto/actualizar-producto.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'inventario', component: InventarioComponent },
   { path: 'pedidos', component: PedidosComponent },
   { path: 'contactos', component: ContactosComponent },
-  { path: 'nuevo-producto', component: NuevoProductoComponent }
+  { path: 'nuevo-producto', component: NuevoProductoComponent },
+  { path: 'actualizar-producto/:id', component: ActualizarProductoComponent }
 ];
 
 @NgModule({
