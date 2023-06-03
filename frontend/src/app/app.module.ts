@@ -20,10 +20,12 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NuevoProductoComponent } from './pages/nuevo-producto/nuevo-producto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ActualizarProductoComponent } from './pages/actualizar-producto/actualizar-producto.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,13 @@ import { ActualizarProductoComponent } from './pages/actualizar-producto/actuali
     PedidosComponent,
     ConfirmationDialogComponent,
     NuevoProductoComponent,
-    ActualizarProductoComponent
+    ActualizarProductoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
+    FlexLayoutModule,
     MatMenuModule,
     MatIconModule,
     AppRoutingModule,
@@ -52,6 +56,7 @@ import { ActualizarProductoComponent } from './pages/actualizar-producto/actuali
     MatSelectModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
