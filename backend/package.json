@@ -9,6 +9,9 @@
   "author": "Ale Pacheco",
   "license": "ISC",
   "dependencies": {
+    "@angular/common": "^16.0.4",
+    "cors": "^2.8.5",
+    "cors-express": "^0.2.2",
     "express": "^4.18.2",
     "mysql": "^2.18.1"
   }

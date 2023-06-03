@@ -5,7 +5,7 @@ const dbConfig = {
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'feria_empleo'
+    database: 'ferreteria'
 };
 
 // Creación de la conexión

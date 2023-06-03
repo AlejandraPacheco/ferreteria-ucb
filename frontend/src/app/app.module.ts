@@ -21,6 +21,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { NuevoProductoComponent } from './pages/nuevo-producto/nuevo-producto.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     InventarioComponent,
     ContactosComponent,
     PedidosComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    NuevoProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatSelectModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
