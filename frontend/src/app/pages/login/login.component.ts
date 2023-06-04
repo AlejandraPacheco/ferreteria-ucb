@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,11 @@ export class LoginComponent implements OnInit {
   styleImage = 'tool';
   form!: FormGroup; // Indicar que la propiedad form será inicializada en el constructor
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient
+  ) {}
+
 
   ngOnInit(): void {
     this.buildForm();
@@ -18,8 +23,8 @@ export class LoginComponent implements OnInit {
 
   private buildForm(): void {
     this.form = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      user: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
 
@@ -32,11 +37,44 @@ export class LoginComponent implements OnInit {
     };
   }
 
-  login(event: Event): void {
+/*   login(event: Event): void {
     event.preventDefault();
     if (this.form.valid) {
       const value = this.form.value;
       console.log(`'%c'USER: ${value.email} - PASSWORD: ${value.password}`, 'background: #222; color: #bada55');
     }
   }
+
+ */
+
+  login(): void {
+    if (this.form.valid) {
+      const { user, password } = this.form.value;
+  
+      // Realizar la solicitud al backend para verificar las credenciales
+      this.http.get(`http://localhost:3000/api/login?user=${user}&password=${password}`).subscribe(
+        (response: any) => {
+          // Las credenciales son correctas, realizar las acciones necesarias (por ejemplo, redireccionar)
+          console.log('Credenciales correctas');
+          
+          // Almacenar el rol en el almacenamiento local
+          localStorage.setItem('userRole', response.rol);
+          
+          // Redireccionar a la página de inicio
+          window.location.href = '/home';
+        },
+        (error: any) => {
+          // Las credenciales son incorrectas, mostrar mensaje de error o realizar acciones adicionales
+          console.error('Credenciales incorrectas', error);
+          alert('Credenciales incorrectas');
+          // Limpiar el formulario
+          this.form.reset();
+        }
+      );
+    }
+  }
+  
 }
+
+
+

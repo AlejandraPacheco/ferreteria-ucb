@@ -97,5 +97,31 @@ router.put('/productos/:id', (req, res) => {
   });
 });
 
+
+// Ruta para verificar las credenciales de inicio de sesión
+router.get('/api/login', (req, res) => {
+  const { user, password } = req.query;
+
+  // Consultar la base de datos para verificar las credenciales
+  const query = 'SELECT * FROM usuario WHERE usuario = ? AND password = ?';
+  db.query(query, [user, password], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error en el servidor' });
+    }
+
+    if (results.length === 0) {
+      return res.status(401).json({ error: 'Credenciales incorrectas' });
+      
+    }
+    console.log(results[0].role);
+    const userRole = results[0].role;
+
+    // Las credenciales son correctas, puedes devolver una respuesta exitosa
+    return res.status(200).json({ success: true, message: 'Credenciales correctas', rol: userRole });
+    
+  });
+});
+
+
 module.exports = router;
 
