@@ -41,6 +41,8 @@ export class NuevoProductoComponent {
           precio: 0,
           stock: 0
         };
+        // Se redirecciona a la página de inventario
+        window.location.href = '/inventario';
       },
       error => {
         console.error(error); // Muestra el error en la consola

@@ -59,6 +59,9 @@ export class LoginComponent implements OnInit {
           
           // Almacenar el rol en el almacenamiento local
           localStorage.setItem('userRole', response.rol);
+
+          // Almacenar el id del usuario en el almacenamiento local
+          localStorage.setItem('userId', response.id);
           
           // Redireccionar a la página de inicio
           window.location.href = '/home';

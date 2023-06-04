@@ -26,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ActualizarProductoComponent } from './pages/actualizar-producto/actualizar-producto.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginComponent } from './pages/login/login.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -33,11 +35,11 @@ import { LoginComponent } from './pages/login/login.component';
     NavbarComponent,
     InventarioComponent,
     ContactosComponent,
-    PedidosComponent,
     ConfirmationDialogComponent,
     NuevoProductoComponent,
     ActualizarProductoComponent,
-    LoginComponent
+    LoginComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,9 @@ import { LoginComponent } from './pages/login/login.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
