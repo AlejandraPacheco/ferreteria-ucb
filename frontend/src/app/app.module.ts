@@ -29,6 +29,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.component';
+import { RegistrarUsuarioComponent } from './pages/registrar-usuario/registrar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PerfilUsuarioComponent } from './pages/perfil-usuario/perfil-usuario.co
     ActualizarProductoComponent,
     LoginComponent,
     PedidosComponent,
-    PerfilUsuarioComponent
+    PerfilUsuarioComponent,
+    RegistrarUsuarioComponent
   ],
   imports: [
     BrowserModule,
